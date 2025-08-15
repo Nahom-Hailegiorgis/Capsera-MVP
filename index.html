@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#7776BC" />
+    <meta name="description" content="Antithesis Product Ideas Dashboard" />
+    <title>Antithesis Dashboard</title>
+    <style>
+      :root {
+        --primary: #7776BC;
+        --secondary: #CDC7E5;
+        --accent1: #FFFBDB;
+        --accent2: #FFEC51;
+        --accent3: #FF674D;
+        --black: #000000;
+        --white: #FFFFFF;
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+        color-scheme: light;
+        color: var(--black);
+        background-color: var(--white);
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, var(--accent1) 0%, var(--secondary) 100%);
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+        gap: 20px;
+      }
+
+      .top-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        height: 400px;
+      }
+
+      .middle-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        min-height: 600px;
+      }
+
+      .bottom-row {
+        height: 200px;
+      }
+
+      .card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 2px solid var(--secondary);
+      }
+
+      .card h2 {
+        color: var(--primary);
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .scrollable {
+        overflow-y: auto;
+        max-height: calc(100% - 50px);
+      }
+
+      .idea-item, .submission-item {
+        padding: 12px;
+        margin-bottom: 8px;
+        background: var(--accent1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-left: 4px solid var(--primary);
+      }
+
+      .idea-item:hover, .submission-item:hover {
+        background: var(--accent2);
+        transform: translateY(-1px);
+      }
+
+      .idea-item.hidden {
+        filter: blur(2px);
+        opacity: 0.6;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: var(--primary);
+      }
+
+      .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid var(--secondary);
+        border-radius: 6px;
+        font-size: 14px;
+        transition: border-color 0.2s ease;
+      }
+
+      .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      .word-count {
+        text-align: right;
+        font-size: 12px;
+        color: var(--primary);
+        margin-top: 2px;
+      }
+
+      .word-count.over-limit {
+        color: var(--accent3);
+        font-weight: 600;
+      }
+
+      .word-count.under-limit {
+        color: #f59e0b;
+        font-weight: 600;
+      }
+
+      .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 8px;
+        margin-top: 5px;
+      }
+
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .checkbox-item input[type="checkbox"] {
+        width: auto;
+      }
+
+      .btn {
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 100%;
+      }
+
+      .btn:hover {
+        background: var(--black);
+        transform: translateY(-1px);
+      }
+
+      .btn:disabled {
+        background: var(--secondary);
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .message {
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+
+      .message.success {
+        background: rgba(34, 197, 94, 0.1);
+        color: #15803d;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+      }
+
+      .message.error {
+        background: rgba(239, 68, 68, 0.1);
+        color: #dc2626;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      }
+
+      .refresh-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .clock-icon {
+        width: 16px;
+        height: 16px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .process-diagram {
+        background: linear-gradient(135deg, var(--accent1) 0%, var(--secondary) 50%, var(--accent2) 100%);
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .process-step {
+        margin-bottom: 8px;
+        padding: 6px 10px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 4px;
+        border-left: 3px solid var(--primary);
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        padding: 20px;
+      }
+
+      .modal-content {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 24px;
+        max-width: 600px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--primary);
+      }
+
+      @media (max-width: 768px) {
+        .top-row {
+          grid-template-columns: 1fr;
+          height: auto;
+        }
+        
+        .middle-row {
+          grid-template-columns: 1fr;
+        }
+        
+        .container {
+          padding: 10px;
+          gap: 15px;
+        }
+        
+        .card {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
