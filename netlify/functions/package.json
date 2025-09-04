@@ -1,9 +1,0 @@
-{
-  "name": "capsera-functions",
-  "version": "1.0.0",
-  "type": "commonjs",
-  "dependencies": {
-    "openai": "^4.20.1",
-    "@google-cloud/translate": "^8.0.2"
-  }
-}
