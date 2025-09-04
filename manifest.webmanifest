@@ -1,0 +1,23 @@
+{
+  "name": "Capsera",
+  "short_name": "Capsera",
+  "description": "Submit and develop your ideas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#F4E87C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 144 144'><rect width='144' height='144' fill='%23F4E87C'/><text x='72' y='72' text-anchor='middle' dominant-baseline='central' font-size='72' font-family='sans-serif' fill='%23584D3D'>C</text></svg>",
+      "sizes": "144x144",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23F4E87C'/><text x='256' y='256' text-anchor='middle' dominant-baseline='central' font-size='256' font-family='sans-serif' fill='%23584D3D'>C</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["productivity", "business"]
+}
