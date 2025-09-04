@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "idb": "^7.1.1"
+    "idb": "^7.1.1",
+    "openai": "^4.20.1",
+    "@google-cloud/translate": "^8.0.2"
   },
   "devDependencies": {
     "vite": "^4.4.5"
