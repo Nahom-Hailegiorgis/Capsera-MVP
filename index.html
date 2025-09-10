@@ -1,51 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F4E87C">
-  <meta name="description" content="Capsera - Submit and develop your ideas">
-  
-  <!-- PWA meta tags -->
-  <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Capsera">
-  
-  <title>Capsera</title>
-  <link rel="stylesheet" href="/src/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4E87C">
+    <meta name="description" content="Capsera - Turn your ideas into reality with AI-powered feedback">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiNGNEU4N0MiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiI+CjxwYXRoIGQ9Ik00OCAyNEMyNS45IDI0IDggNDEuOSA4IDY0czE3LjkgNDAgNDAgNDBzNDAtMTcuOSA0MC00MEw4OCAyNHptMCA2NGMtMTMuMiAwLTI0LTEwLjgtMjQtMjRzMTAuOC0yNCAyNC0yNCAyNCAxMC44IDI0IDI0LTEwLjggMjQtMjQgMjR6IiBmaWxsPSIjNTg0RDNEIi8+CjwvZz4KPC9zdmc+">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiNGNEU4N0MiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiI+CjxwYXRoIGQ9Ik00OCAyNEMyNS45IDI0IDggNDEuOSA4IDY0czE3LjkgNDAgNDAgNDBzNDAtMTcuOSA0MC00MEw4OCAyNHptMCA2NGMtMTMuMiAwLTI0LTEwLjgtMjQtMjRzMTAuOC0yNCAyNC0yNCAyNCAxMC44IDI0IDI0LTEwLjggMjQtMjQgMjR6IiBmaWxsPSIjNTg0RDNEIi8+CjwvZz4KPC9zdmc+">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Environment Variables (Public Safe Keys Only) -->
+    <script>
+        window.ENV = {
+            SUPABASE_URL: "https://hedxbghwtnzoykptforl.supabase.co",
+            SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlZHhiZ2h3dG56b3lrcHRmb3JsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY2ODY0MDUsImV4cCI6MjA3MjI2MjQwNX0.FTOPX2be0ORQ6AQfXWVD9Oi3OtMivsM3BR3gfQIsY3A",
+            EUREKA: true,
+            EDGE_FUNCTION_URL: "https://https://hedxbghwtnzoykptforl.supabase.co.supabase.co/functions/v1"
+        };
+    </script>
+    
+    <!-- Supabase Client -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase-js/2.38.4/supabase.min.js"></script>
+    
+    <title>Capsera - Transform Ideas into Reality</title>
 </head>
 <body>
-  <div id="app">
-    <nav class="nav">
-      <div class="nav-brand">Capsera</div>
-      <div class="nav-links">
-        <a href="#/" class="nav-link">Global Ideas</a>
-        <a href="#/my" class="nav-link">My Submissions</a>
-        <a href="#/submit" class="nav-link">Submit Ideas</a>
-        <a href="#/settings" class="nav-link">Settings</a>
-      </div>
-    </nav>
-    
-    <main id="main-content" class="main-content">
-      <div class="loading">Loading Capsera...</div>
-    </main>
-    
-    <!-- Modals -->
-    <div id="modal-overlay" class="modal-overlay" style="display: none;">
-      <div id="modal-content" class="modal-content"></div>
+    <!-- App Container -->
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-screen="global">
+                <span class="nav-icon">🌍</span>
+                <span class="nav-label">Global Ideas</span>
+            </button>
+            <button class="nav-btn" data-screen="submissions">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">My Submissions</span>
+            </button>
+            <button class="nav-btn" data-screen="submit">
+                <span class="nav-icon">💡</span>
+                <span class="nav-label">Submit Ideas</span>
+            </button>
+            <button class="nav-btn" data-screen="settings">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">Settings</span>
+            </button>
+        </nav>
+
+        <!-- Screen 1: Global Ideas -->
+        <div id="screen-global" class="screen">
+            <header class="screen-header">
+                <h1>🌟 Top Ideas</h1>
+                <p>See what amazing projects others are building!</p>
+            </header>
+            
+            <main class="screen-content">
+                <div id="global-ideas-list" class="ideas-container">
+                    <!-- Ideas will be loaded here -->
+                </div>
+                
+                <!-- Feedback Section -->
+                <section class="feedback-section">
+                    <h2>Help Us Improve Capsera</h2>
+                    <p>Your feedback helps Nahom, Shourya, and Sahasra build a better platform for young entrepreneurs!</p>
+                    
+                    <form id="feedback-form" class="feedback-form">
+                        <div class="form-group">
+                            <label for="feedback-username">Your Name (optional)</label>
+                            <input type="text" id="feedback-username" name="feedback-username">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-contact">Contact (email/phone) - optional</label>
+                            <input type="text" id="feedback-contact" name="feedback-contact" placeholder="your@email.com or phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-message">Your Feedback *</label>
+                            <textarea id="feedback-message" name="feedback-message" required rows="4" placeholder="How can we make Capsera better for young entrepreneurs like you?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Send Feedback</button>
+                    </form>
+                </section>
+            </main>
+        </div>
+
+        <!-- Screen 2: My Submissions -->
+        <div id="screen-submissions" class="screen">
+            <header class="screen-header">
+                <h1>📊 My Submissions</h1>
+                <p>Track your project progress and AI feedback</p>
+            </header>
+            
+            <main class="screen-content">
+                <div id="my-submissions-list" class="submissions-container">
+                    <!-- Submissions will be loaded here -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Screen 3: Submit Ideas -->
+        <div id="screen-submit" class="screen">
+            <header class="screen-header">
+                <div id="submit-greeting">
+                    <h1>💡 Submit Your Idea</h1>
+                    <p>Ready to turn your idea into reality? Let's start!</p>
+                </div>
+            </header>
+            
+            <main class="screen-content">
+                <section class="user-project-selection">
+                    <!-- User Selection -->
+                    <div class="selection-group">
+                        <label for="user-select">Select User</label>
+                        <div class="select-with-create">
+                            <select id="user-select">
+                                <option value="">Select User</option>
+                            </select>
+                            <button type="button" onclick="app.showCreateUserModal()" class="btn-create">Create User</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Selection -->
+                    <div class="selection-group">
+                        <label for="project-select">Select Project</label>
+                        <div class="select-with-create">
+                            <select id="project-select">
+                                <option value="">Select Project</option>
+                            </select>
+                            <button type="button" onclick="app.showCreateProjectModal()" class="btn-create">Create Project</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Submission Form -->
+                <div id="submission-form" class="submission-form-container" style="display: none;">
+                    <!-- Form will be generated dynamically -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Screen 4: Settings -->
+        <div id="screen-settings" class="screen">
+            <header class="screen-header">
+                <h1>⚙️ Settings</h1>
+                <p>Customize your Capsera experience</p>
+            </header>
+            
+            <main class="screen-content">
+                <!-- Translation Section -->
+                <section class="settings-section">
+                    <h2>🌐 Language & Translation</h2>
+                    <p>Translate Capsera to your preferred language</p>
+                    <div id="translation-section">
+                        <!-- Translation controls will be loaded here -->
+                    </div>
+                </section>
+                
+                <!-- Users Management -->
+                <section class="settings-section">
+                    <h2>👥 Manage Users</h2>
+                    <p>Manage local users on this device</p>
+                    <div id="users-management">
+                        <!-- Users list will be loaded here -->
+                    </div>
+                </section>
+            </main>
+        </div>
     </div>
-  </div>
 
-  <!-- Environment configuration - Replace with your actual keys -->
-  <script>
-    window.ENV = {
-      SUPABASE_URL: 'https://hedxbghwtnzoykptforl.supabase.co',
-      SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlZHhiZ2h3dG56b3lrcHRmb3JsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY2ODY0MDUsImV4cCI6MjA3MjI2MjQwNX0.FTOPX2be0ORQ6AQfXWVD9Oi3OtMivsM3BR3gfQIsY3A',
-      APP_VERSION: '1.0.0'
-    };
-  </script>
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading...</div>
+    </div>
 
-  <script type="module" src="/src/main.js"></script>
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then((registration) => {
+                    console.log('SW registered: ', registration);
+                })
+                .catch((registrationError) => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+        }
+    </script>
 </body>
 </html>

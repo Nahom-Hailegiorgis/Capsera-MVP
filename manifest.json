@@ -1,0 +1,117 @@
+{
+  "name": "Capsera - Transform Ideas into Reality",
+  "short_name": "Capsera",
+  "description": "A mobile-first PWA for young entrepreneurs to submit ideas and get AI-powered feedback",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#F4E87C",
+  "background_color": "#FFFFFF",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjcyIiBoZWlnaHQ9IjcyIiByeD0iMTIiIGZpbGw9IiNGNEU4N0MiLz4KPHN2ZyB4PSIxOCIgeT0iMTgiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiI+CjxwYXRoIGQ9Ik0xOCA5QzkuOSA5IDMgMTUuOSAzIDI0czYuOSAxNSAxNSAxNSAxNS02LjkgMTUtMTVMMzMgOXptMCAyNGMtNSAwLTktNC05LTlzNC05IDktOSA5IDQgOSA5LTQgOS05IDl6IiBmaWxsPSIjNTg0RDNEIi8+CjwvZz4KPC9zdmc+",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTYiIGZpbGw9IiNGNEU4N0MiLz4KPHN2ZyB4PSIyNCIgeT0iMjQiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCI+CjxwYXRoIGQ9Ik0yNCAxMkMxMS45IDEyIDIgMjEuOSAyIDM0czEzLjkgMjIgMzIgMjIgMzItMTMuOSAzMi0yMkw0NCAxMnptMCAzMmMtNy4yIDAtMTMtNS44LTEzLTEzczUuOC0xMyAxMy0xMyAxMyA1LjggMTMgMTMtNS44IDEzLTEzIDEzeiIgZmlsbD0iIzU4NEQzRCIvPgo8L2c+Cjwvc3ZnPg==",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgdmlld0JveD0iMCAwIDE0NCAxNDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNDQiIGhlaWdodD0iMTQ0IiByeD0iMjAiIGZpbGw9IiNGNEU4N0MiLz4KPHN2ZyB4PSIzNiIgeT0iMzYiIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiI+CjxwYXRoIGQ9Ik0zNiAxOEMxNy45IDE4IDMgMzUuOSAzIDU0czkuOSAzNiAzNiAzNiAzNi0xNy45IDM2LTM2TDY2IDE4em0wIDU0Yy0xMC44IDAtMTgtOC4xLTE4LTE4czguMS0xOCAxOC0xOCAxOCA4LjEgMTggMTgtOC4xIDE4LTE4IDE4eiIgZmlsbD0iIzU4NEQzRCIvPgo8L2c+Cjwvc3ZnPg==",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiNGNEU4N0MiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiI+CjxwYXRoIGQ9Ik00OCAyNEMyNS45IDI0IDggNDEuOSA4IDY0czE3LjkgNDAgNDAgNDBzNDAtMTcuOSA0MC00MEw4OCAyNHptMCA2NGMtMTMuMiAwLTI0LTEwLjgtMjQtMjRzMTAuOC0yNCAyNC0yNCAyNCAxMC44IDI0IDI0LTEwLjggMjQtMjQgMjR6IiBmaWxsPSIjNTg0RDNEIi8+CjwvZz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiNGNEU4N0MiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiPgo8cGF0aCBkPSJNMTI4IDY0QzU3LjkgNjQgMCAxMjEuOSAwIDI1NnM1Ny45IDE5MiAxMjggMTkyIDE5Mi01Ny45IDE5Mi0xOTJMMzIwIDY0em0wIDE5MmMtMzUuMyAwLTY0LTI4LjctNjQtNjRzMjguNy02NCA2NC02NCA2NCAyOC43IDY0IDY0LTI4LjcgNjQtNjQgNjR6IiBmaWxsPSIjNTg0RDNEIi8+CjwvZz4KPC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzc1IiBoZWlnaHQ9IjY2NyIgdmlld0JveD0iMCAwIDM3NSA2NjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNzUiIGhlaWdodD0iNjY3IiByeD0iMzIiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iMTYiIHk9IjY0IiB3aWR0aD0iMzQzIiBoZWlnaHQ9IjEyOCIgcng9IjE2IiBmaWxsPSIjRjRFODdDIi8+Cjx0ZXh0IHg9IjE4OCIgeT0iMTEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzU4NEQzRCI+8J+MnyBUb3AgSWRlYXM8L3RleHQ+Cjx0ZXh0IHg9IjE4OCIgeT0iMTQ0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpIiBmb250LXNpemU9IjE2IiBmaWxsPSIjOUY5NTZDIj5TZWUgd2hhdCBhbWF6aW5nIHByb2plY3RzIG90aGVycyBhcmUgYnVpbGRpbmchPC90ZXh0Pgo8cmVjdCB4PSIxNiIgeT0iMjE2IiB3aWR0aD0iMzQzIiBoZWlnaHQ9IjM4NCIgcng9IjE2IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjMyIiB5PSIyNDAiIHdpZHRoPSIzMTEiIGhlaWdodD0iODAiIHJ4PSI4IiBmaWxsPSIjRUJGMzhCIi8+Cjx0ZXh0IHg9IjQ4IiB5PSIyNzIiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWkiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjNTg0RDNEIj4jMSBTb2xhcldhbGxldDwvdGV4dD4KPHR5cGUgeD0iNDgiIHk9IjI5NiIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzlGOTU2QyI+QXNoYSDCtyAyMDI1LjAxLjEwPC90ZXh0Pgo8dGV4dCB4PSIzMDMiIHk9IjI4MCIgZm9udC1mYW1pbHk9InN5c3RlbS11aSIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM1ODREMCI+ODcvMTAwPC90ZXh0Pgo8L3N2Zz4=",
+      "sizes": "375x667",
+      "type": "image/svg+xml",
+      "label": "Global Ideas Screen"
+    }
+  ],
+  
+  "categories": [
+    "productivity",
+    "education",
+    "business",
+    "social"
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Submit New Idea",
+      "short_name": "Submit",
+      "description": "Quickly submit a new idea",
+      "url": "/?screen=submit",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTYiIGZpbGw9IiNGNEU4N0MiLz4KPHBhdGggZD0iTTQ4IDI0VjcyTTI0IDQ4SDcyIiBzdHJva2U9IiM1ODREZDNEIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "My Submissions",
+      "short_name": "My Work",
+      "description": "View your submitted ideas",
+      "url": "/?screen=submissions",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTYiIGZpbGw9IiNGNEU4N0MiLz4KPHJlY3QgeD0iMjQiIHk9IjI0IiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHJ4PSI4IiBzdHJva2U9IiM1ODREMCI+PHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNMzIgNDBINjRNMzIgNDhINjRNMzIgNTZINTYiIHN0cm9rZT0iIzU4NEQzRCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  
+  "protocol_handlers": [
+    {
+      "protocol": "web+capsera",
+      "url": "/?action=%s"
+    }
+  ],
+  
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}
